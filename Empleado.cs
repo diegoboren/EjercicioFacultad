@@ -8,7 +8,12 @@ namespace ConsoleApp1
     {
         private DateTime _fechaIngreso;
         private int _legajo;
-        private List<Salario> salarios;
+        private List<Salario> _salarios;
+
+        public Empleado(List<Salario> salarios)
+        {
+            _salarios = salarios;
+        }
 
         public DateTime FechaIngreso { get => _fechaIngreso; set => _fechaIngreso = value; }
 
@@ -18,5 +23,18 @@ namespace ConsoleApp1
 
             return()
         }
+    
+        public void AgregarSalario(Salario s)
+        {
+            foreach (Salario salario in _salarios)
+            {
+                if (salario == null)
+                {
+                    _salarios.Add(s);
+            }
+        }
+    
+    
+    
     }
 }
